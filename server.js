@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -16,6 +16,8 @@ var tables = [
     id: "234"
     }
 ];
+
+var waitlist = [];
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -34,9 +36,13 @@ app.post("/newreservation", function(req, res) {
     var newtable = req.body;
   
     console.log(newtable);
-  
+    if (tables.length < 5){
     tables.push(newtable);
-  
+    console.log("New reservation made!");
+    }
+    else{
+        waitlist.push(newtable)
+    }
     res.json(newtable);
 });
 
