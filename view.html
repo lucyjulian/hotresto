@@ -61,7 +61,7 @@
 
     $.get("/api/waitlist")
       .then(function(res){
-        for (i = 1; i < res.length; i++){
+        for (i = 0; i < res.length; i++){
         var waitingList = res[i];
         $("#waitlist").append("Name: " + waitingList.name + " email: " + waitingList.email + "<br>");
           
