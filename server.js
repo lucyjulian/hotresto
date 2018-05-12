@@ -31,7 +31,7 @@ var waitlist = [
     id: "char"
     }
 ];
-
+app.use('/assets',express.static('./Images'))
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
