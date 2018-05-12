@@ -18,7 +18,7 @@ var tables = [
 ];
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
 });
   
 app.get("/newreservation", function(req, res) {
@@ -27,6 +27,7 @@ app.get("/newreservation", function(req, res) {
 
 app.get("/tables", function(req, res) {
     return res.json(tables);
+    res.sendFile(path.join(__dirname, "view.html"));
 });
 
 app.post("/newreservation", function(req, res) {
