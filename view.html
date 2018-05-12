@@ -55,7 +55,7 @@
           for (i = 0; i < res.length; i++){
           var tableList = res[i];
           console.log("add.html", tableList);
-          $("#tables").append("\nName: " + tableList.name + " email: " + tableList.email + "\n");
+          $("#tables").append("Name: " + tableList.name + " email: " + tableList.email + "<br>");
           }
     });
 
@@ -63,7 +63,7 @@
       .then(function(res){
         for (i = 1; i < res.length; i++){
         var waitingList = res[i];
-        $("#waitlist").append("\nName: " + waitingList.name + " email: " + waitingList.email + "\n");
+        $("#waitlist").append("Name: " + waitingList.name + " email: " + waitingList.email + "<br>");
           
         };
         
