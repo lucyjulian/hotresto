@@ -48,7 +48,7 @@
     $.get("/api/waitlist")
       .then(function(res){
         var tableList = res[0];
-        for (i = 1; i < res.length, i++){
+        for (i = 1; i < res.length; i++){
           tableList = tableList + "/n" + res[i];
         };
         $("#waitlist").text(tableList);
