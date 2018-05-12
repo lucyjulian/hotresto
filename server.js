@@ -23,7 +23,14 @@ var tables = [
     }
 ];
 
-var waitlist = [];
+var waitlist = [
+    {
+    name: "CHARMANDER",
+    phone: "555-3464",
+    email: "charrrr@gmail.com",
+    id: "char"
+    }
+];
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -52,8 +59,7 @@ app.post("/newreservation", function(req, res) {
     if (tables.length < 5){
     tables.push(newtable);
     console.log("New reservation made!");
-    }
-    else{
+    } else {
         waitlist.push(newtable);
     }
     res.json(newtable);
