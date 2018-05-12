@@ -56,8 +56,8 @@
           for (i = 1; i < res.length; i++){
           tableList = tableList + "/n" + res[i];
           };
-          console.log("add.html", res);
-          $("#tables").text(tableList[0]);
+          console.log("add.html", tableList);
+          $("#tables").text(tableList);
     });
 
     $.get("/api/waitlist")
