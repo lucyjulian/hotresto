@@ -52,12 +52,11 @@
   <script type="text/javascript">
     $.get("/api/tables")
         .then(function(res) {
-          var tableList = res[0];
           for (i = 1; i < res.length; i++){
-          tableList = tableList + "/n" + res[i];
-          };
+          var tableList = res[0];
           console.log("add.html", tableList);
-          $("#tables").text(tableList);
+          $("#tables").append("Name: " + tableList.name + " email: " + tableList.email + "\n");
+          }
     });
 
     $.get("/api/waitlist")
