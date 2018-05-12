@@ -39,12 +39,17 @@
   </div>
 
   <script type="text/javascript">
-    $.get("/tables", function(data) {
-        console.log(data);
-        if (data) {
-          $("#tables").text(data);
-        }
+    $.get("/api/tables")
+        .then(function(res) {
+          console.log("add.html", res);
+          $("#tables").text(res);
     });
+
+    $.get("/api/waitlist")
+      .then(function(res){
+        $("#waitlist").text(res)
+      })
+
   </script>
 </body>
 </html>

@@ -17,7 +17,7 @@
       <h1>Restaurant Express</h1>
       <h3>The greatest resource in the galaxy for booking a table!</h3>
       <hr>
-      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+      <a href="/tables"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
     </div>
     <div class="row">
 
@@ -47,7 +47,7 @@
 
               <div class="form-group">
                 <label for="unique.id">Unique ID</label>
-                <input type="text" class="form-control" id="unique.id">
+                <input type="text" class="form-control" id="unique-id">
               </div>
 
             </form>
@@ -70,7 +70,7 @@
         name: $("#name").val().trim(),
         phoneNumber: $("#phone").val().trim(),
         email: $("#email").val().trim(),
-        uniqueID: $("#unique.id").val().trim()
+        uniqueID: $("#unique-id").val().trim()
       };
       console.log("newTable");
 

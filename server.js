@@ -27,8 +27,15 @@ app.get("/newreservation", function(req, res) {
     res.sendFile(path.join(__dirname, "add.html"));
 });
 
-app.get("/tables", function(req, res) {
+app.get("/api/tables", function(req, res){
     return res.json(tables);
+});
+
+app.get("/api/waitlist", function(req, res){
+    return res.json(waitlist);
+});
+
+app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
 
@@ -41,7 +48,7 @@ app.post("/newreservation", function(req, res) {
     console.log("New reservation made!");
     }
     else{
-        waitlist.push(newtable)
+        waitlist.push(newtable);
     }
     res.json(newtable);
 });
